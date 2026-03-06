@@ -1,29 +1,30 @@
 # 🐱 DeskyMate
 
 A cute animated **desktop pet for Windows** built with Python.
-DeskyMate lives on your screen, walks around randomly, reacts to clicks, and occasionally follows your cursor.
 
-It uses **sprite animations and Tkinter** to create a lightweight desktop companion.
+DeskyMate lives on your desktop, walks around randomly, reacts to clicks, performs idle animations, and sometimes follows your mouse cursor.
+
+The project uses **sprite animation + Tkinter** to create a lightweight desktop companion.
 
 ---
 
 ## 🎬 Demo
 
-![DeskyMate Demo](deskymate_demo.gif)
+![Demo](deskymate_demo.gif)
 
 ---
 
 ## ✨ Features
 
 * 🐾 Animated idle pet
-* 🚶 Random walking around the screen
-* 🖱 Occasionally follows your mouse cursor
-* 🎭 Random actions (wink, wave, lick, clean)
-* 😴 Sleep animation when inactive
+* 🚶 Random walking across the screen
+* 🖱 Occasionally follows the mouse cursor
+* 🎭 Random behaviors (wink, wave, lick, clean)
+* 😴 Sleep animation when the computer is inactive
 * ❤️ Reactions on double-click
-* 🖱 Drag pet anywhere on the screen
+* 🖱 Drag the pet anywhere on the screen
 * 🔍 Adjustable pet size
-* 🖥 Transparent background
+* 🖥 Transparent background window
 * 📦 Can be compiled into a standalone `.exe`
 
 ---
@@ -66,20 +67,20 @@ DeskyMate
 
 ## ⚙️ Installation (Run from Python)
 
-1. Clone the repository
+Clone the repository:
 
 ```
-git clone https://github.com/yourusername/deskymate.git
-cd deskymate
+git clone https://github.com/Namanau9/DeskyMate.git
+cd DeskyMate
 ```
 
-2. Install dependencies
+Install dependencies:
 
 ```
 pip install pillow pynput
 ```
 
-3. Run the pet
+Run the program:
 
 ```
 python pet.py
@@ -87,9 +88,9 @@ python pet.py
 
 ---
 
-## 📦 Run the Executable
+## 📦 Running the Executable
 
-If you downloaded the compiled version:
+If you download the compiled version:
 
 ```
 pet.exe
@@ -101,7 +102,7 @@ Just double-click the file and the pet will appear on your desktop.
 
 ## 🔧 Adjust Pet Size
 
-You can change the pet size in **pet.py**:
+You can modify the pet size inside **pet.py**:
 
 ```
 SCALE = 0.45
@@ -119,12 +120,12 @@ Example values:
 
 ## 🧠 How It Works
 
-The program uses:
+The project uses:
 
 * **Tkinter** → transparent always-on-top window
 * **Pillow (PIL)** → image loading and scaling
 * **pynput** → track mouse and keyboard activity
-* **Sprite animation** → idle and sleep states
+* **Sprite animations** → idle and sleep states
 
 The pet behavior system includes:
 
@@ -138,9 +139,9 @@ The pet behavior system includes:
 
 ## 🚀 Future Improvements
 
-Possible upgrades:
+Planned features:
 
-* 🐾 Walking animation while moving
+* 🐾 Real walking animation
 * 🍗 Feeding system
 * 💬 Speech bubbles
 * 🪑 Sitting on the Windows taskbar
