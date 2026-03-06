@@ -7,15 +7,14 @@ import sys
 import os
 from pynput import mouse, keyboard
 
-# ----------------------------
+
 # SETTINGS
-# ----------------------------
+
 
 SCALE = 0.45   # change pet size here
 
-# ----------------------------
 # RESOURCE PATH (FOR EXE)
-# ----------------------------
+
 
 def resource_path(relative_path):
     try:
@@ -24,9 +23,9 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
     return os.path.join(base_path, relative_path)
 
-# ----------------------------
+
 # USER ACTIVITY
-# ----------------------------
+
 
 last_activity = time.time()
 cursor_x = 0
@@ -51,9 +50,9 @@ def on_click(x, y, button, pressed):
 keyboard.Listener(on_press=on_press).start()
 mouse.Listener(on_move=on_move, on_click=on_click).start()
 
-# ----------------------------
+
 # WINDOW
-# ----------------------------
+
 
 root = tk.Tk()
 
@@ -66,9 +65,9 @@ root.attributes("-transparentcolor", "black")
 canvas = tk.Canvas(root, bg="black", highlightthickness=0)
 canvas.pack()
 
-# ----------------------------
+
 # IMAGE LOADER
-# ----------------------------
+
 
 def load(name, flip=False):
 
@@ -86,9 +85,9 @@ def load(name, flip=False):
 
     return ImageTk.PhotoImage(img)
 
-# ----------------------------
+
 # SPRITES
-# ----------------------------
+
 
 idle_right = [
     load("idle1"),
@@ -129,16 +128,16 @@ pet_h = idle_right[0].height()
 
 canvas.config(width=pet_w, height=pet_h)
 
-# ----------------------------
+
 # SCREEN SIZE
-# ----------------------------
+
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# ----------------------------
+
 # PET POSITION
-# ----------------------------
+
 
 x = random.randint(0, screen_width - pet_w)
 y = screen_height - pet_h - 40
@@ -148,9 +147,9 @@ pet = canvas.create_image(pet_w//2, pet_h//2, image=idle_right[0])
 state = "idle"
 direction = 1
 
-# ----------------------------
+
 # ANIMATION
-# ----------------------------
+
 
 def animate():
 
@@ -177,9 +176,9 @@ def animate():
 
     root.after(300, animate)
 
-# ----------------------------
+
 # RANDOM WALK
-# ----------------------------
+
 
 def walk_random():
 
@@ -214,9 +213,9 @@ def walk_random():
 
     root.after(random.randint(9000, 15000), walk_random)
 
-# ----------------------------
+
 # FOLLOW CURSOR SOMETIMES
-# ----------------------------
+
 
 def follow_cursor():
 
@@ -255,9 +254,9 @@ def follow_cursor():
 
     root.after(random.randint(15000, 22000), follow_cursor)
 
-# ----------------------------
+
 # RANDOM ACTIONS
-# ----------------------------
+
 
 def random_action():
 
@@ -280,9 +279,9 @@ def set_idle():
     global state
     state = "idle"
 
-# ----------------------------
+
 # CLICK REACTION
-# ----------------------------
+
 
 def pet_clicked(event):
 
@@ -298,9 +297,9 @@ def pet_clicked(event):
 
 canvas.bind("<Double-Button-1>", pet_clicked)
 
-# ----------------------------
+
 # DRAG PET
-# ----------------------------
+
 
 def drag_start(event):
     root.x = event.x
@@ -318,15 +317,15 @@ def drag_motion(event):
 canvas.bind("<Button-1>", drag_start)
 canvas.bind("<B1-Motion>", drag_motion)
 
-# ----------------------------
+
 # CLOSE OPTION
-# ----------------------------
+
 
 root.bind("<Escape>", lambda e: root.destroy())
 
-# ----------------------------
+
 # START
-# ----------------------------
+
 
 root.geometry(f"{pet_w}x{pet_h}+{x}+{y}")
 
