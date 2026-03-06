@@ -9,8 +9,9 @@ The project uses **sprite animation + Tkinter** to create a lightweight desktop 
 ---
 
 ## 🎬 Demo
+![deskymate_demo](https://github.com/user-attachments/assets/b0a83ed2-fede-4ef6-a2a0-692a53ab1c0e)
 
-![Demo](deskymate_demo.gif)
+
 
 ---
 
